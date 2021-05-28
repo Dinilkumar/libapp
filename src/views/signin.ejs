@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title><%= title%></title>
+		<meta name="generator" content="Bootply" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+		<!--[if lt IE 9]>
+			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="css/styles.css" rel="stylesheet">
+	</head>
+	<body>
+<header class="navbar navbar-bright navbar-fixed-top" role="banner">
+  <div class="container">
+    <div class="navbar-header">
+      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a href="/" class="navbar-brand">Home</a>
+    </div>
+    <nav class="collapse navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+          <%for(i=0;i<nav.length;i++){%>
+        <li>
+          <a href="<%=nav[i].link%>"><%=nav[i].name %></a>
+        </li>
+        <%}%>
+    </ul>
+      <ul class="nav navbar-right navbar-nav">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
+          <ul class="dropdown-menu" style="padding:12px;">
+            <form class="form-inline">
+              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
+            </form>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div id="masthead">  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7">
+        <h1>Sign-up
+          <p class="lead"></p>
+        </h1>
+      </div>
+      <div class="col-md-5">
+        <div class="well well-lg"> 
+          <div class="row">
+            <div class="col-sm-12">
+              
+			
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="top-spacer"> </div>
+      </div>
+    </div> 
+  </div><!-- /cont -->
+  
+</div>
+
+
+<div class="container">
+  <div class="row">
+    
+    <div class="col-md-12"> 
+      
+      <div class="panel">
+        <div class="panel-body">
+          
+          
+          
+          <!--/stories-->
+         
+          <div class="registration-form">
+            <form method="GET" >
+                <div class="form-icon">
+                    <span><i class="icon icon-user"></i></span>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control item" id="username" placeholder="Username">
+                </div>
+                <div id="error_name">  </div>
+                <div class="form-group">
+                    <input type="text" class="form-control item" id="email" placeholder="Email">
+                </div>
+                <div id="error_div">  </div>
+                <div class="form-group">
+                    <input type="text" class="form-control item" id="phone" placeholder="Phone.[xxx-xxx-xxxx, xxx.xxx.xxxx, xxx xxx xxxx]">
+                </div>
+                <div id="error_phone">  </div>
+                <div class="form-group">
+                  <input type="password" class="form-control item" id="pass" placeholder="Password" onkeyup="return passwordChanged();">
+                  
+                </div>
+                <span id="strength"></span>
+              <div class="form-group">
+                <input type="password" class="form-control item" id="re_pass" placeholder="Confirm-Password" onkeyup="checkPasswordMatch();">
+            </div>
+            <div class="registrationFormAlert" style="color:green;" id="CheckPasswordMatch"></div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-block create-account" id="signup" onclick="return (username_check() & validate() & phonenumber() & CheckPassword() & checkPasswordMatch());" >Sign-up</button>
+                </div>
+            </form>
+            <div class="social-media">
+              <!-- <h5>Sign up with social media</h5>-->
+              <div class="social-icons">
+                  <!-- <a href="#"><i class="icon-social-facebook" title="Facebook"></i></a>
+                  <a href="#"><i class="icon-social-google" title="Google"></i></a>
+                  <a href="#"><i class="icon-social-twitter" title="Twitter"></i></a> -->
+              </div>
+          </div> 
+           
+        </div>
+
+          <!--/stories-->
+          
+          
+         
+        
+          
+        </div>
+      </div>
+                                                                                       
+	                                                
+                                                      
+   	</div><!--/col-12-->
+  </div>
+</div>
+                                                
+                                                                                
+<hr>
+
+<div class="container" id="footer">
+  <div class="row">
+    <div class="col col-sm-12">
+      
+      <h1>Follow Us</h1>
+      <div class="btn-group">
+       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
+	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
+	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<hr>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <ul class="list-inline">
+          <li><i class="icon-facebook icon-2x"></i></li>
+          <li><i class="icon-twitter icon-2x"></i></li>
+          <li><i class="icon-google-plus icon-2x"></i></li>
+          <li><i class="icon-pinterest icon-2x"></i></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-6">
+          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
+      </div>
+    </div>
+  </div>
+</footer>
+	<!-- script references -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+    <!-- <script src="js/validate.js"></script> -->
+    <script>
+let user_name = document.getElementById("username");
+let email = document.getElementById("email");
+let phone = document.getElementById("phone");
+let password = document.getElementById("pass");
+let confirmPassword = document.getElementById("re_pass");
+let error = document.querySelector("#error_div");
+
+function username_check()
+{
+  
+  if(user_name.value == "" || user_name.value == null)
+  {
+    
+    error_name.innerHTML="Enter user name";
+     error_name.style.color="red";
+    return false;
+  }
+    
+  else
+  {
+  
+   error_name.innerHTML="";
+    return true;
+  }
+}
+
+
+function validate()
+{
+  let regexp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$///
+    // let regexp = /^([A-Za-z0-9\,-]+)@([A-Za-z0-9\-]+).([a-z]{2,3})(.[a-z]{2,3})?$/
+    if(regexp.test(email.value))
+    {
+        error_div.innerHTML="";
+        return true;
+    }
+    {
+      error_div.innerHTML="Enter valid Email-Id";
+      error_div.style.color="red";
+        return false;
+    }
+    
+}
+function phonenumber()
+{
+    //alert(phone);
+  let regexp = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  if(regexp.test(phone.value))
+        {
+         
+         error_phone.innerHTML = "";
+         return true;
+        }
+      else
+        {
+            error_phone.innerHTML="Enter valid phoneno";
+            error_phone.style.color="red";
+            return false;
+        }
+}
+function CheckPassword() 
+{ 
+    //alert("hai");
+    var decimal=  /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+    var strength = document.getElementById('strength');
+    if(password.value.match(decimal)) 
+    { 
+        return true;
+        strength.innerHTML="";
+    }
+    else
+    { 
+        
+        strength.innerHTML="Enter Password";
+        strength.style.color="red";
+        return false;
+    }
+} 
+function passwordChanged() 
+{
+    var strength = document.getElementById('strength');
+    var strongRegex = new RegExp("^(?=.{14,})(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*\\W).*$", "g");
+    var mediumRegex = new RegExp("^(?=.{10,})(((?=.*[A-Z])(?=.*[a-z]))|((?=.*[A-Z])(?=.*[0-9]))|((?=.*[a-z])(?=.*[0-9]))).*$", "g");
+    var enoughRegex = new RegExp("(?=.{8,}).*", "g");
+    var pwd = document.getElementById("pass");
+    if (pwd.value.length == 0) {
+        strength.innerHTML = 'Type Password';
+    } else if (false == enoughRegex.test(pwd.value)) {
+        strength.innerHTML = 'More Characters';
+    } else if (strongRegex.test(pwd.value)) {
+        strength.innerHTML = '<span style="color:green">Strong!</span>';
+    } else if (mediumRegex.test(pwd.value)) {
+        strength.innerHTML = '<span style="color:orange">Medium!</span>';
+    } else {
+        strength.innerHTML = '<span style="color:red">Weak!</span>';
+        
+    }
+}
+function checkPasswordMatch() 
+{
+    //var password = $("#pass").val();
+   
+    //var confirmPassword = $("#re_pass").val();
+    if (password.value != confirmPassword.value)
+    {
+       
+        $("#CheckPasswordMatch").html("Passwords does not match!");
+        return false;
+    }
+        
+    else
+    {
+        
+        $("#CheckPasswordMatch").html("");
+      
+        return true;
+    }
+       
+}
+
+    </script>
+	</body>
+</html>
