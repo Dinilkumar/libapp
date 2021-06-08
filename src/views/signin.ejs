@@ -92,20 +92,20 @@
           <!--/stories-->
          
           <div class="registration-form">
-            <form method="GET" >
+            <form method="POST"  >
                 <div class="form-icon">
                     <span><i class="icon icon-user"></i></span>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control item" id="username" placeholder="Username">
+                    <input type="text" class="form-control item" id="username" name="username" placeholder="Username">
                 </div>
                 <div id="error_name">  </div>
                 <div class="form-group">
-                    <input type="text" class="form-control item" id="email" placeholder="Email">
+                    <input type="text" class="form-control item" id="email" name="email" placeholder="Email">
                 </div>
                 <div id="error_div">  </div>
                 <div class="form-group">
-                    <input type="text" class="form-control item" id="phone" placeholder="Phone.[xxx-xxx-xxxx, xxx.xxx.xxxx, xxx xxx xxxx]">
+                    <input type="text" class="form-control item" id="phone" name="phone" placeholder="Phone.[xxx-xxx-xxxx, xxx.xxx.xxxx, xxx xxx xxxx]">
                 </div>
                 <div id="error_phone">  </div>
                 <div class="form-group">
@@ -114,11 +114,11 @@
                 </div>
                 <span id="strength"></span>
               <div class="form-group">
-                <input type="password" class="form-control item" id="re_pass" placeholder="Confirm-Password" onkeyup="checkPasswordMatch();">
+                <input type="password" class="form-control item" id="re_pass" name="con_pass" placeholder="Confirm-Password" onkeyup="checkPasswordMatch();">
             </div>
             <div class="registrationFormAlert" style="color:green;" id="CheckPasswordMatch"></div>
                 <div class="form-group">
-                    <button type="button" class="btn btn-block create-account" id="signup" onclick="return (username_check() & validate() & phonenumber() & CheckPassword() & checkPasswordMatch());" >Sign-up</button>
+                    <button type="button" class="btn btn-block create-account" id="signup" onclick="return (username_check() & validate() & phonenumber() & CheckPassword() & checkPasswordMatch());" >Save</button>
                 </div>
             </form>
             <div class="social-media">

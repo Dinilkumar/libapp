@@ -90,25 +90,27 @@
           
           
           <!--/stories-->
-         
-          <div class="registration-form">
-            <form method="GET" onsubmit="return checkvalues();">
+               <div class="registration-form">
+            <form method="POST" action="/admin/add" onsubmit="return checkvalues();" enctype="multipart/form-data">
                 <div class="form-icon">
                     <span><i class="icon icon-book"></i></span>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control item" id="bookname" placeholder="Book Name">
+                    <input type="text" class="form-control item" id="bookname" name="title" placeholder="Book Name">
                 </div>
                  
                 <div class="form-group">
-                    <input type="text" class="form-control item" id="authorname" placeholder="Author Name">
+                    <input type="text" class="form-control item" id="authorname" name="author" placeholder="Author Name">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control item" id="genere" placeholder="Genere">
+                    <input type="text" class="form-control item" id="genere" name="genere" placeholder="Genere">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control item" id="publisher" placeholder="Publisher">
+                  <input type="text" class="form-control item" id="publisher" name="publisher" placeholder="Publisher">
               </div>
+              <div class="form-group">
+                <input type="file" class="form-control file" id="image" name="image" placeholder="Image">
+            </div>
             
                 <div class="form-group">
                     <button type="submit" class="btn btn-block create-account">Add Book</button>

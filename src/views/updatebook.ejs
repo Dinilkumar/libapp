@@ -6,12 +6,12 @@
 		<title><%= title%></title>
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="/css/bootstrap.min.css" rel="stylesheet">
 		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
 		<!--[if lt IE 9]>
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-		<link href="css/styles.css" rel="stylesheet">
+		<link href="/css/styles.css" rel="stylesheet">
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -51,7 +51,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Add Author
+        <h1>Update Book
           <p class="lead"></p>
         </h1>
       </div>
@@ -90,34 +90,39 @@
           
           
           <!--/stories-->
-         
-          <div class="registration-form">
-            <form method="POST" action="/addauthor/add" onsubmit="return checkvalues();" enctype="multipart/form-data">
+               <div class="registration-form">
+            <form method="POST" action="/admin/updatebook" enctype="multipart/form-data">
                 <div class="form-icon">
                     <span><i class="icon icon-book"></i></span>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control item" id="authorname" name="author" placeholder="Author Name">
+                    <input type="hidden" name="id" value="<%book._id%>">
+                    <input type="text" class="form-control item" id="bookname" name="title" placeholder="Book Name" value="<%= book.title%>" >
                 </div>
                  
                 <div class="form-group">
-                    <input type="text" class="form-control item" id="bookname" name="book" placeholder="Book Name">
+                    <input type="text" class="form-control item" id="author" name="author" placeholder="Author Name" value="<%= book.author%>">
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control item" id="genere" name="genere" placeholder="Genere">
+                    <input type="text" class="form-control item" id="genere" name="genere" placeholder="Genere" value="<%= book.gener%>">
                 </div>
                 <div class="form-group">
-                  <input type="text" class="form-control item" id="publisher" name="publisher" placeholder="Publisher">
+                  <input type="text" class="form-control item" id="publisher" name="publisher" placeholder="Publisher" value="<%= book.publisher%>">
               </div>
               <div class="form-group">
-                <input type="file" class="form-control file" id="image" name="image" placeholder="Image">
-            </div>
+                <input type="file" class="form-control file"  name="image" > 
+                <input type="hidden" name="old_image" id="old_image"  value="<%= book.image%>">
+              <% if( book.image) {%>
+                <img alt="" src="/uploads/images/<%= book.image%>" style="width:100px;height:100px" class="img-circle">
+                <%}%>         
+              </div>
+            
                 <div class="form-group">
-                    <button type="submit" class="btn btn-block create-account">Add Author</button>
+                    <button type="submit" class="btn btn-block create-account">Update Book</button>
                 </div>
             </form>
             <div class="social-media">
-              <h5></h5>
+              <!-- <h5>Sign up with social media</h5> -->
               <div class="social-icons">
                   <!-- <a href="#"><i class="icon-social-facebook" title="Facebook"></i></a>
                   <a href="#"><i class="icon-social-google" title="Google"></i></a>
@@ -185,19 +190,20 @@
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+    <script src="js/validate.js"></script>
     <script>
       function checkvalues()
       {
 
-        if(authorname.value == "")
+        if(bookname.value == "")
           {
-            alert("Enter author Name");
+            alert("Enter book Name");
             return false;
           }
-        else if(bookname.value == "")
+        else if(authorname.value == "")
           {
             
-            alert("Enter book name");
+            alert("Enter author name");
             return false;
           }
         else if(genere.value == "")
@@ -214,7 +220,7 @@
           }
         else
         {
-          alert('Author details entered successfully');
+          alert('Book details entered successfully');
           return true;
        }
       }
